@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae fuga sit, harum corporis error quisquam eos dolores illum? Eius aut assumenda facere tenetur laudantium culpa minus repellendus consectetur nulla! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati, magni eveniet vero cum quod veritatis delectus iusto eum saepe illo vel impedit odio! Fugit, eos! Quam dolore quasi alias.";
+// if you wanna test the code
+    const sendMsg = () => {
+    console.log(text.length);
+    let copytext = text;
+    do{
+       let index = copytext.lastIndexOf(" ", 160);
+        if(index === 0){
+            index = copytext.length;
+        }
+        console.log(copytext.substr(0,index));
+        copytext = copytext.slice(index,copytext.length);
+        console.log(copytext.length);
+
+    }while(copytext.length > 0);
+}
+sendMsg();
+
+
+// *******************  solution ********************
+
+    // function sendSmsMessage (text, to, from){
+    //     let copyText = text;
+    //     do{
+    //         // if the index was in the middle of the word so i will end the letter at last space
+    //         let index = copyText.lastIndexOf(" ", 160); 
+    //         if(index === 0) index = copyText.length; // in case there was one word
+    //         const msg = copyText.substr(0,index);
+    //         copyText = copyText.slice(index, copyText.length);
+    //         // send Message 
+    //         deliverMessageViaCarrier(msg, to, from); 
+    //     }while(copyText.length >0);
+    // } 
+    // function deliverMessageViaCarrier (text, to, from) {
+    //     SmsCarrier.deliverMessage(text, to, from)
+    // }
+    </script>
+</body>
+</html>
